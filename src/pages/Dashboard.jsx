@@ -34,8 +34,8 @@ const Dashboard = () => {
 
       if (userError || !user) {
         // No direct message/popup state in Dashboard, navigate directly
-        console.error("User not authenticated:", userError);
-        navigate("/login");
+        // console.error("User not authenticated:", userError);
+        // navigate("/login");
         setLoading(false);
         return;
       }
@@ -169,7 +169,7 @@ const Dashboard = () => {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-4">
         <div className="animate-spin rounded-full h-20 w-20 border-t-4 border-b-4 border-blue-500 mb-6"></div>
-        <p className="text-xl text-gray-300">Loading dashboard...</p>
+        <p className="text-xl text-yellow-500">Loading dashboard...</p>
       </div>
     );
   }
@@ -177,16 +177,16 @@ const Dashboard = () => {
   return (
     <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center py-12 px-4">
       <div className="bg-gray-800 shadow-2xl rounded-3xl p-8 sm:p-10 w-full max-w-3xl border border-gray-700">
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-8 text-gray-100 leading-tight">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-center mb-8 text-yellow-500 leading-tight">
           AI Goal Planner
         </h1>
-        <p className="text-lg text-center mb-10 text-gray-400">
+        <p className="text-lg text-center mb-10 text-yellow-600">
           Describe your fitness or health goal, and our AI will generate a personalized routine for you.
         </p>
 
         <div className="mb-6">
           <textarea
-            className="w-full p-4 sm:p-5 border border-gray-600 rounded-xl mb-4 text-lg text-gray-100 bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 ease-in-out resize-y min-h-[120px]"
+            className="w-full p-4 sm:p-5 border border-gray-600 rounded-xl mb-4 text-lg text-yellow-500 bg-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-200 ease-in-out resize-y min-h-[120px]"
             ref={textareaRef}
             placeholder="E.g., I want to run a marathon in 6 months, I need a 30-day weight loss plan, or I want to build muscle mass and strength."
             value={goal}
@@ -198,9 +198,9 @@ const Dashboard = () => {
         <button
           className={`w-full py-4 rounded-xl text-xl font-bold transition-all duration-300 ease-in-out transform hover:scale-105 shadow-lg ${
             waiting
-              ? "bg-blue-700 cursor-not-allowed opacity-70"
-              : "bg-blue-600 hover:bg-blue-700 text-white"
-          } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800`}
+              ? "bg-purple-700 cursor-not-allowed opacity-70"
+              : "bg-purple-600 hover:bg-purple-700 text-yellow-500 hover:text-yellow-400"
+          } focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800`}
           onClick={sendGoal}
           disabled={waiting || !user || !profile || profile.gender === null || profile.age === null}
         >

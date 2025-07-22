@@ -65,14 +65,14 @@ const Login = () => {
         </a>
 
         {/* Title */}
-        <h1 className="text-gray-100 text-center text-4xl font-extrabold mb-8">
+        <h1 className="text-yellow-500 text-center text-4xl font-extrabold mb-8">
           Login / Sign Up
         </h1>
 
         {/* Email Login Form */}
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
           <div>
-            <label htmlFor="email" className="text-gray-300 text-base font-medium mb-2 block">
+            <label htmlFor="email" className="text-yellow-300 text-base font-medium mb-2 block">
               Email Address
             </label>
             <input
@@ -106,7 +106,7 @@ const Login = () => {
           {/* Continue with Email Button */}
           <button
             type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+            className="w-full bg-purple-600 hover:bg-purple-700 text-yellow-400 font-semibold py-3 rounded-lg transition-all duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-800"
           >
             Continue with Email
           </button>
@@ -122,7 +122,7 @@ const Login = () => {
           <button
             type="button"
             onClick={handleGoogleLogin}
-            className="w-full flex items-center justify-center border border-gray-600 bg-gray-700 text-gray-100 rounded-lg py-3 hover:bg-gray-600 transition-colors duration-200 ease-in-out shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800"
+            className="w-full flex items-center justify-center border border-gray-600 bg-gray-700 text-yellow-500 rounded-lg py-3 hover:bg-purple-600 transition-colors duration-200 ease-in-out shadow-sm hover:shadow-md focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-800"
           >
             <img
               src="https://www.svgrepo.com/show/475656/google-color.svg"
