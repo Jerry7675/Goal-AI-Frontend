@@ -123,16 +123,16 @@ const EditProfile = () => {
 
     // No `hasError` logic was present in the original code, so keeping it as is.
     // If you plan to add more client-side validation, this section would be expanded.
-    // let hasError = false;
-    // const newErrors = { ...errors };
-    // setErrors(newErrors);
-    // if (hasError) {
-    //   setMessage("Please fix the errors before saving.");
-    //   setMessageType("error");
-    //   setShowPopup(true);
-    //   setLoading(false);
-    //   return;
-    // }
+    let hasError = false;
+    const newErrors = { ...errors };
+    setErrors(newErrors);
+    if (hasError) {
+      setMessage("Please fix the errors before saving.");
+      setMessageType("error");
+      setShowPopup(true);
+      setLoading(false);
+      return;
+    }
 
     const updates = {
       id: user.id,

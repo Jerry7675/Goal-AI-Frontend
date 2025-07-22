@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { useNavigate } from 'react-router-dom';
 import { supabase } from "../supabaseClient";
-// import { set } from 'react-hook-form'; // This import was unused and can be removed
+ import { set } from 'react-hook-form'; // This import was unused and can be removed
 import GeneratedRoutine from '../components/GeneratedRoutine'; // Assuming this component is also styled well
 
 
@@ -23,7 +23,7 @@ const Dashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // setConnected(true); // This line is not needed if WebSocket is commented out
+     setConnected(true); // This line is not needed if WebSocket is commented out
     const fetchProfile = async () => {
       setLoading(true); // Start loading
 
@@ -71,28 +71,28 @@ const Dashboard = () => {
   }, [navigate]); // Add navigate to dependency array
 
   // WebSocket connection logic (commented out as per original)
-  // useEffect(() => {
-  //   socketRef.current = new WebSocket("ws://localhost:8000/ws");
-  //   socketRef.current.onopen = () => { setConnected(true); };
-  //   socketRef.current.onmessage = (event) => {
-  //     const message = JSON.parse(event.data);
-  //     if (message.type === "routine") { setRoutine(message.data); }
-  //     else if (message.type === "error") { setError(message.data); }
-  //   };
-  //   socketRef.current.onerror = (err) => { console.error("WebSocket error", err); setError("WebSocket error occurred."); };
-  //   socketRef.current.onclose = () => { setConnected(false); console.warn("WebSocket connection closed."); };
-  //   return () => socketRef.current?.close();
-  // }, []);
+  useEffect(() => {
+    socketRef.current = new WebSocket("ws://localhost:8000/ws");
+    socketRef.current.onopen = () => { setConnected(true); };
+    socketRef.current.onmessage = (event) => {
+      const message = JSON.parse(event.data);
+      if (message.type === "routine") { setRoutine(message.data); }
+      else if (message.type === "error") { setError(message.data); }
+    };
+    socketRef.current.onerror = (err) => { console.error("WebSocket error", err); setError("WebSocket error occurred."); };
+    socketRef.current.onclose = () => { setConnected(false); console.warn("WebSocket connection closed."); };
+    return () => socketRef.current?.close();
+  }, []);
 
 
   const sendGoal = () => {
     // Original WebSocket logic commented out, using fetch as per original
-    // if (!socketRef.current || socketRef.current.readyState !== WebSocket.OPEN) {
-    //   setError("WebSocket not connected.");
-    //   return;
-    // }
-    // const payload = { type: "goal", data: goal, };
-    // socketRef.current.send(JSON.stringify(payload));
+    if (!socketRef.current || socketRef.current.readyState !== WebSocket.OPEN) {
+      setError("WebSocket not connected.");
+      return;
+    }
+    const payload = { type: "goal", data: goal, };
+    socketRef.current.send(JSON.stringify(payload));
 
     if (!user) {
       setError("Please log in to submit a goal.");
