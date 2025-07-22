@@ -133,7 +133,7 @@ const Navbar = () => {
             className="h-8 sm:h-10"
             alt="GoalAI Logo"
           />
-          <span className="text-2xl sm:text-3xl font-extrabold text-yellow-400">
+          <span className="text-2xl sm:text-3xl font-extrabold text-white-400">
             GoalAI
           </span>
         </NavLink>
@@ -143,7 +143,7 @@ const Navbar = () => {
           {!user ? (
             <NavLink
               to="/login"
-              className="bg-purple-600 hover:bg-blue-700 text-yellow-500 font-semibold text-base sm:text-lg rounded-lg px-4 py-2 transition-colors duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
+              className="bg-purple-600 hover:bg-blue-700 text-white-500 font-semibold text-base sm:text-lg rounded-lg px-4 py-2 transition-colors duration-200 ease-in-out shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
             >
               Login / Sign Up
             </NavLink>
